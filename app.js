@@ -3,7 +3,9 @@ import { Server } from 'socket.io';
 
 const app = express(); 
 
-const serverHttp = app.listen(8080, () => console.log('Server http running')) // Ponermos a escuchar nuestro server http y lo guardamos en serverHttp
+const PORT =  process.env.PORT || 8080;
+
+const serverHttp = app.listen(PORT, () => console.log('Server http running')) // Ponermos a escuchar nuestro server http y lo guardamos en serverHttp
 
 const io = new Server(serverHttp); // Crear nuestro servidor websocket, pasando como parametro el server http
 
